@@ -3,3 +3,27 @@
   padding: 0;
   list-style-type: none;
 }
+
+.mobile(@rules) {
+  @media (min-width: @mobile-width) {
+    @rules();
+  }
+}
+
+.mobile-width-only(@rules) {
+  @media (max-width: @mobile-width-only) {
+    @rules();
+  }
+}
+
+.tablet(@rules) {
+  @media (min-width: @tablet-width) {
+    @rules();
+  }
+}
+
+.desktop(@rules) {
+  @media (min-width: @desktop-width) {
+    @rules();
+  }
+}

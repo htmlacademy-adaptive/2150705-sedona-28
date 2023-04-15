@@ -7,6 +7,10 @@
   box-shadow: 0 1px 0 0 @black-02,
     inset 0 1px 0 0 @white-02;
   margin-bottom: 1px;
+
+  .tablet({
+    background-color: @white;
+  });
 }
 
 .site-list__item:last-child {
@@ -24,4 +28,11 @@
   display: block;
   padding-top: 17px;
   padding-bottom: 12px;
+
+  .tablet({
+    color: @black;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 18px 10px 17px;
+  });
 }
