@@ -1,9 +1,69 @@
 .features__list {
   .clear-list;
-
   background-color: hsl(0, 0%, 93%);
+
+  .tablet({
+    display: grid;
+    grid-template-columns: repeat(3, 256px);
+  });
+
+  .desktop({
+    grid-template-columns:  repeat(3, 400px);
+  });
 }
 
+.features__advantages-list {
+  .clear-list;
+
+  .mobile({
+    padding-left: 65px;
+  });
+
+  .tablet({
+    display: grid;
+    grid-template-columns: repeat(3, 256px);
+    padding: 0;
+  });
+
+  .desktop({
+    grid-template-columns: repeat(3, 400px);
+  });
+}
+
+.features__item {
+  .tablet({
+    grid-template-columns: 256px 1fr;
+  });
+
+  .desktop({
+    grid-template-columns: 400px 1fr;
+  });
+
+  &--city {
+    .tablet({
+      display: grid;
+      grid-column: 1 / 4;
+    });
+  }
+
+  &--bridge {
+    .tablet({
+      display: grid;
+      grid-column: 1 / 4;
+      grid-template-columns: 1fr 256px;
+    });
+
+    .desktop({
+      grid-template-columns: 1fr 400px;
+    });
+  }
+
+  &--colored {
+    .tablet({
+      background-color: white;
+    });
+  }
+}
 
 .features__text-block {
   &--accent {
@@ -13,9 +73,15 @@
 }
 
 
-.features__advantages-list {
-  .clear-list;
+.features__image {
+  width: 100%;
 
-  background-color: @white;
+  .desktop({
+    width: 800px;
+  });
+
+  &--bridge {
+    order: -1;
+  }
 }
 

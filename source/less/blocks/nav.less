@@ -1,0 +1,14 @@
+.nav__list {
+
+  .tablet({
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding-top: 0;
+
+    &::after{
+      content: "";
+      grid-column: 3 / 4;
+      grid-row: 1 / 3;
+    }
+  });
+}
