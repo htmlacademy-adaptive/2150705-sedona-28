@@ -1,6 +1,6 @@
 .features__list {
   .clear-list;
-  background-color: hsl(0, 0%, 93%);
+  background-color: @gray;
 
   .tablet({
     display: grid;
@@ -14,6 +14,7 @@
 
 .features__advantages-list {
   .clear-list;
+  background-color: @white;
 
   .mobile({
     padding-left: 65px;
@@ -21,8 +22,9 @@
 
   .tablet({
     display: grid;
-    grid-template-columns: repeat(3, 256px);
+    grid-template-columns: repeat(3, 1fr);
     padding: 0;
+    grid-column: 1 / -1;
   });
 
   .desktop({
@@ -32,11 +34,11 @@
 
 .features__item {
   .tablet({
-    grid-template-columns: 256px 1fr;
+    grid-template-columns: 1fr 2fr;
   });
 
   .desktop({
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 1fr 2fr;
   });
 
   &--city {
@@ -57,12 +59,6 @@
       grid-template-columns: 1fr 400px;
     });
   }
-
-  &--colored {
-    .tablet({
-      background-color: white;
-    });
-  }
 }
 
 .features__text-block {
@@ -75,9 +71,15 @@
 
 .features__image {
   width: 100%;
+  object-fit: cover;
+
+  .tablet({
+    height: 256px;
+    background-size: contain;
+  });
 
   .desktop({
-    width: 800px;
+
   });
 
   &--bridge {

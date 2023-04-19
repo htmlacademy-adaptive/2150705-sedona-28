@@ -1,22 +1,130 @@
+.feedback__form {
+
+  .tablet({
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    grid-template-areas:
+                        "name contacts"
+                        "impression impression"
+                        "attractions attractions"
+                        "textarea textarea";
+  });
+}
+
 .feedback__group {
-  padding: 24px 0;
+  padding: 0;
   margin: 0;
   border: none;
+  width: 100%;
+
+  &--name {
+    .tablet({
+      grid-area: name;
+      display: flex;
+      flex-direction: column;
+    });
+  }
+
+  &--contacts {
+    grid-area: contacts;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid @gray-100;
+
+    .tablet({
+      padding-left: 50px;
+    });
+  }
+
+  &--impression {
+    .tablet({
+      grid-area: impression;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 48px;
+      border-top: 1px solid @gray-100;
+      padding-top: 38px;
+    });
+
+    .desktop({
+      display: flex;
+      flex-wrap: wrap;
+      gap: 66px;
+    });
+  }
+
+  &--attractions {
+    .tablet({
+      grid-area: attractions;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 38px;
+    });
+
+    .desktop({
+      display: flex;
+      flex-wrap: wrap;
+      gap: 64px;
+    });
+  }
+
+  &--textarea {
+    grid-area: textarea;
+
+    .tablet({
+      padding-top: 28px;
+    });
+  }
 }
+
 
 .feedback__title {
   font-size: 18px;
   line-height: 26px;
   text-align: center;
-  margin-bottom: 20px;
+
   padding: 0;
+  text-transform: uppercase;
+
+  &--legend {
+    font-size: 21px;
+  }
+
+  &--impression {
+    padding: 0 67px;
+  }
 }
 
 .feedback__description {
   padding: 36px 0 28px 0;
+
+  .tablet({
+    padding: 64px 115px 102px;
+  });
+
+  .desktop({
+    padding: 115px 330px 66px;
+  });
 }
 
 .feedback__label {
   display: block;
   margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.feedback__submit {
+  .tablet({
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  });
+
+  .desktop({
+    padding: 0 96px;
+  });
 }
