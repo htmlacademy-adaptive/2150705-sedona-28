@@ -6,10 +6,36 @@
   background-position: center;
   background-size: cover;
   min-height: 389px;
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -1px;
+    left: -0.5%;
+    height: 27px;
+    width: 101%;
+    clip-path: polygon(0 100%, 0 0, 50% 100%, 100% 0%, 100% 100%);
+  }
 
   .tablet({
     min-height: 518px;
+    &::after {
+      height: 57px;
+      clip-path: polygon(0 100%, 0 15%, 10% 42%, 10% 0%, 50% 97%, 90% 0%, 90% 42%, 100% 15%, 100% 100%);
+  }
   });
+
+  &--hight {
+    min-height: 156px;
+
+    .tablet({
+      min-height: 290px;
+    });
+  }
 }
 
 .main-hero__image {
