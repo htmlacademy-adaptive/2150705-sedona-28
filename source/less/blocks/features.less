@@ -1,9 +1,79 @@
 .features__list {
   .clear-list;
+  background-color: @gray;
 
-  background-color: hsl(0, 0%, 93%);
+  .tablet({
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  });
+
+  .desktop({
+    grid-template-columns:  repeat(3, 1fr);
+  });
 }
 
+.features__advantages-list {
+  .clear-list;
+  background-color: @white;
+
+  .mobile({
+    padding-left: 65px;
+  });
+
+  .tablet({
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+    grid-column: 1 / -1;
+  });
+
+  .desktop({
+    grid-template-columns: repeat(3, 400px);
+  });
+}
+
+.features__item {
+  position: relative;
+
+
+  .tablet({
+    grid-template-columns: 1fr 2fr;
+  });
+
+  .desktop({
+    grid-template-columns: 1fr 2fr;
+  });
+
+  &--city {
+    .tablet({
+      display: grid;
+      grid-column: 1 / 4;
+    });
+  }
+
+  &--bridge {
+    .tablet({
+      display: grid;
+      grid-column: 1 / 4;
+      grid-template-columns: 1fr 256px;
+    });
+
+    .desktop({
+      grid-template-columns: 1fr 400px;
+    });
+  }
+
+  &--align {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+
+    .tablet({
+      padding-top: 158px;
+      text-align: center;
+    });
+  }
+}
 
 .features__text-block {
   &--accent {
@@ -13,9 +83,50 @@
 }
 
 
-.features__advantages-list {
-  .clear-list;
+.features__image {
+  width: 100%;
+  object-fit: cover;
 
-  background-color: @white;
+  .tablet({
+    height: 256px;
+    background-size: contain;
+  });
+
+  .desktop({
+
+  });
+
+  &--bridge {
+    order: -1;
+  }
 }
 
+.features__item--house::after {
+  background-image: url("/img/icon-house.svg");
+  .icon-after;
+
+  .tablet({
+    background-image: url("/img/icon-house-tablet.svg");
+    .icon-after-tablet;
+  });
+}
+
+.features__item--food::after {
+  background-image: url("/img/icon-burger.svg");
+  .icon-after;
+
+  .tablet({
+    background-image: url("/img/icon-burger-tablet.svg");
+    .icon-after-tablet;
+  });
+}
+
+.features__item--gift::after {
+  background-image: url("../img/icon-gift.svg");
+  .icon-after;
+
+  .tablet({
+    background-image: url("../img/icon-gift-tablet.svg");
+    .icon-after-tablet;
+  });
+}

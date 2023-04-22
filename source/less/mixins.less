@@ -3,3 +3,46 @@
   padding: 0;
   list-style-type: none;
 }
+
+.mobile(@rules) {
+  @media (min-width: @mobile-width) {
+    @rules();
+  }
+}
+
+.mobile-width-only(@rules) {
+  @media (max-width: @mobile-width-only) {
+    @rules();
+  }
+}
+
+.tablet(@rules) {
+  @media (min-width: @tablet-width) {
+    @rules();
+  }
+}
+
+.desktop(@rules) {
+  @media (min-width: @desktop-width) {
+    @rules();
+  }
+}
+
+.icon-after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 20px;
+  left: -30px;
+  width: 40px;
+  height: 40px;
+}
+
+.icon-after-tablet {
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75px;
+  height: 76px;
+}
