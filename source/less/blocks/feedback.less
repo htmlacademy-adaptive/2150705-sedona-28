@@ -1,14 +1,7 @@
 .feedback__form {
 
   .tablet({
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // justify-items: center;
-    // grid-template-areas:
-    //                     "name contacts"
-    //                     "impression impression"
-    //                     "attractions attractions"
-    //                     "textarea textarea";
+
   });
 }
 
@@ -19,17 +12,24 @@
   width: 100%;
   border-top: 1px solid @gray-100;
 
+
+  .tablet({
+    padding: 0 17px;
+  });
+
   &--name {
     .tablet({
       display: flex;
       flex-direction: column;
       padding-right: 29px;
+      border-top: none;
     });
   }
 
   &--contacts {
     display: flex;
     flex-direction: column;
+    border-top: none;
 
     .tablet({
       border-left: 1px solid @gray-100;
@@ -89,11 +89,19 @@
 
     .tablet({
       margin-bottom: 28px;
+      padding: 0 47px;
     });
   }
 
   &--impression {
     padding: 0 67px;
+  }
+
+  &--attractions {
+
+    .tablet({
+      padding: 0 47px;
+    });
   }
 }
 
@@ -111,9 +119,10 @@
 
 .feedback__label {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 36px;
   font-size: 18px;
   line-height: 26px;
+  position: relative;
 }
 
 .feedback__textarea {
