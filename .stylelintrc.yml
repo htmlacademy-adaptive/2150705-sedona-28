@@ -1,4 +1,4 @@
-extends: stylelint-config-standard-scss
+extends: stylelint-config-standard-less
 
 rules:
   annotation-no-unknown: true
@@ -62,3 +62,6 @@ rules:
   selector-type-no-unknown: true
 
   value-keyword-case: [lower, { camelCaseSvgKeywords : true }]
+  less/color-no-invalid-hex: null
+  no-extra-semicolons: null
+

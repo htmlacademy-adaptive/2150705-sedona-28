@@ -20,14 +20,14 @@ const SERVER_OPTIONS = {
 	watch: true,
 };
 
-const streamStyles = () => compileSass().pipe(server.stream());
+const streamStyles = () => compileLess().pipe(server.stream());
 
 async function serve() {
 	server.init(SERVER_OPTIONS);
 
 	gulp.watch("source/pages/**/*.html", processMarkup);
 	gulp.watch("source/public/**/*", copyAssets);
-	gulp.watch("source/sass/**/*.scss", streamStyles);
+	gulp.watch("source/less/**/*.less", streamStyles);
 	gulp.watch("source/js/**/*.{js,ts}", compileScripts);
 	gulp.watch("source/images/**/*.{png,jpg}", processImages);
 	gulp.watch("source/images/**/*.svg", optimizeVector);
