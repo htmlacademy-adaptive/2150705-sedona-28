@@ -6,19 +6,34 @@
     "@htmlacademy/editorconfig-cli": "1.0.0",
     "autoprefixer": "10.4.0",
     "browser-sync": "2.27.7",
+    "del": "^7.0.0",
     "gulp": "4.0.2",
-    "gulp-less": "5.0.0",
-    "gulp-plumber": "1.2.1",
-    "gulp-postcss": "9.0.1",
-    "postcss": "8.3.11",
-    "stylelint": "13.13.1",
-    "stylelint-config-htmlacademy": "0.1.11"
+    "gulp-cache": "^1.1.3",
+    "gulp-esbuild": "^0.11.1",
+    "gulp-html-bemlinter": "^2.1.3",
+    "gulp-less": "^5.0.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sharp-responsive": "^0.4.0",
+    "gulp-stacksvg": "^2.0.1",
+    "gulp-svgmin": "^4.1.0",
+    "gulp-w3c-html-validator": "^5.2.0",
+    "postcss-calc": "^8.2.4",
+    "postcss-csso": "^6.0.1",
+    "postcss-less": "^6.0.0",
+    "postcss-preset-env": "^8.3.2",
+    "postcss-sort-media-queries": "^5.1.0",
+    "stylelint": "^15.6.0",
+    "stylelint-config-standard-less": "^1.0.0"
   },
   "scripts": {
+    "build": "gulp build",
+    "cache:clear": "gulp clearCache",
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
-    "lint": "npm run editorconfig && npm run stylelint",
-    "build": "gulp styles",
+    "fix:less": "stylelint \"source/less/**/*.less\" --custom-syntax postcss-less --fix",
+    "lint": "gulp lint && npm run lint:less && npm run editorconfig",
+    "lint:less": "stylelint \"source/less/**/*.less\" --custom-syntax postcss-less",
     "start": "gulp"
   },
   "browserslist": [
@@ -39,5 +54,9 @@
   "engines": {
     "node": "^16"
   },
-  "type": "module"
+  "type": "module",
+  "volta": {
+    "node": "18.16.0",
+    "npm": "9.6.5"
+  }
 }
