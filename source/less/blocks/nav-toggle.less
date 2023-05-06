@@ -1,5 +1,31 @@
 .nav-toggle {
   margin: 0;
   padding: 0;
-  display: none;
+  z-index: 2;
+  background-color: @white;
+  border: none;
+  cursor: pointer;
+  width: 43px;
+  height: 56px;
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  display: block;
+
+  .tablet({
+    display: none;
+  });
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 4px;
+    background-color: @blue-400;
+    width: 23px;
+    top: 17px;
+    left: 7px;
+    box-shadow: 0 6px 0 0 @blue-400,
+      0 12px 0 0 @blue-400;
+  }
 }
