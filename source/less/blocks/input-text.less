@@ -15,9 +15,15 @@
   background-color: @white-f2;
   width: 100%;
 
-  .tablet({
+  &:hover, &:focus {
+		background-color: #e5e5e5;
+  }
 
-  });
+  &:active {
+		outline: 4px solid #e5e5e5;
+		background-color: @white;
+  }
+
 }
 
 .input-text__icon {

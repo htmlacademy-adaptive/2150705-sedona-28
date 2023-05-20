@@ -1,7 +1,7 @@
 .main-hero {
   background-color: @blue-300;
   margin: 0 auto;
-  background-image: url("../img/hero-image.jpg");
+  background-image: url("../img/hero-mobile.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -11,11 +11,19 @@
   position: relative;
   overflow: hidden;
 
+  .tablet({
+    background-image: url("../img/hero-tablet.jpg");
+  });
+
+  .desktop({
+    background-image: url("../img/hero-desktop.jpg");
+  });
+
   &::after {
     content: "";
     background-color: #ffffff;
     position: absolute;
-    bottom: -1px;
+    bottom: 0;
     left: -0.5%;
     height: 27px;
     width: 101%;
@@ -42,4 +50,5 @@
 .main-hero__image {
   display: block;
   margin: 0 auto;
+  object-fit: cover;
 }
