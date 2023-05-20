@@ -1,7 +1,7 @@
 .main-hero {
   background-color: @blue-300;
   margin: 0 auto;
-  background-image: url("../img/hero-image.jpg");
+  background-image: url("../img/hero-mobile.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -10,6 +10,14 @@
   place-items: center;
   position: relative;
   overflow: hidden;
+
+  .tablet({
+    background-image: url("../img/hero-tablet.jpg");
+  });
+
+  .desktop({
+    background-image: url("../img/hero-desktop.jpg");
+  });
 
   &::after {
     content: "";
