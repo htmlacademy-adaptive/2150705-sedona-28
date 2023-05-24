@@ -33,7 +33,7 @@
     "editorconfig": "editorconfig-cli",
     "fix:less": "stylelint \"source/less/**/*.less\" --custom-syntax postcss-less --fix",
     "lint": "gulp lint && npm run lint:less && npm run editorconfig",
-    "lint:less": "stylelint \"source/less/**/*.less\" --custom-syntax postcss-less",
+    "stylelint": "stylelint \"source/less/**/*.less\" --custom-syntax postcss-less",
     "start": "gulp"
   },
   "browserslist": [
