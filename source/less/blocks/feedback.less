@@ -10,6 +10,7 @@
 
   .tablet({
     padding: 0 17px;
+    margin-bottom: 48px;
   });
 
   &--name {
@@ -36,9 +37,9 @@
     .tablet({
       display: grid;
       grid-template-columns: 1fr 1fr;
-      margin-top: 48px;
       border-top: 1px solid @gray-100;
       padding-top: 38px;
+
     });
 
     .desktop({
@@ -106,24 +107,61 @@
 }
 
 .feedback__description {
-  padding: 36px 0 28px 0;
+  padding: 36px 0 28px;
 
   .tablet({
-    padding: 64px 115px 102px;
+    max-width: 438px;
+    margin: 0 auto;
+    padding-top: 64px;
+    margin-bottom: 96px;
   });
 
   .desktop({
-    padding: 115px 330px 66px;
+    padding-top: 115px;
   });
 }
 
 .feedback__label {
-  display: block;
-  margin-bottom: 37px;
   font-size: 18px;
   line-height: 26px;
-  position: relative;
+  margin-left: 14px;
 }
+
+.feedback__text {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  padding: 16px;
+  color: @black;
+  border: none;
+  background-color: @white-f2;
+  width: 100%;
+  margin-bottom: 16px;
+
+  &--tel {
+    margin-bottom: 0;
+  }
+
+  &--mail {
+    margin-bottom: 0;
+  }
+
+  &:hover, &:focus {
+    background-color: #e5e5e5;
+  }
+
+  &:active {
+    outline: 4px solid #e5e5e5;
+    background-color: @white;
+  }
+
+}
+
+.feedback__wrapper {
+    position: relative;
+    margin-bottom: 16px;
+}
+
 
 .feedback__textarea {
   width: 100%;
@@ -136,7 +174,7 @@
   });
 
   .desktop({
-     max-width: 768px;
+    max-width: 768px;
 
 
   });

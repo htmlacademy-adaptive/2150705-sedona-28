@@ -11,14 +11,6 @@
   position: relative;
   overflow: hidden;
 
-  .tablet({
-    background-image: url("../img/hero-tablet.jpg");
-  });
-
-  .desktop({
-    background-image: url("../img/hero-desktop.jpg");
-  });
-
   &::after {
     content: "";
     background-color: #ffffff;
@@ -28,15 +20,42 @@
     height: 27px;
     width: 101%;
     clip-path: polygon(0 100%, 0 0, 50% 100%, 100% 0%, 100% 100%);
+
+    .tablet({
+      height: 57px;
+      clip-path: polygon(4% 0, 50% 100%, 96% 0, 96% 32%, 100% 30%, 100% 100%, 0 100%, 0 30%, 4% 39%);
+    });
+
+    .desktop({
+      clip-path: polygon(0 100%, 0 0, 20.8% 41.58%, 20.8% 0, 50% 100%, 79.2% 0, 79.2% 41.58%, 100% 0, 100% 100%);
+    });
   }
 
   .tablet({
+    background-image: url("../img/hero-tablet.jpg");
     min-height: 518px;
-    &::after {
-      height: 57px;
-      clip-path: polygon(0 100%, 0 15%, 10% 42%, 10% 0%, 50% 97%, 90% 0%, 90% 42%, 100% 15%, 100% 100%);
-  }
   });
+
+  .desktop({
+    background-image: url("../img/hero-desktop.jpg");
+  });
+
+
+
+  // .tablet({
+  //   min-height: 518px;
+  //   &::after {
+  //     height: 57px;
+  //     clip-path: polygon(4% 0, 50% 100%, 96% 0, 96% 32%, 100% 30%, 100% 100%, 0 100%, 0 30%, 4% 39%);
+  // }
+  // });
+
+  // .desktop({
+  //   &::after{
+  //     clip-path: polygon(0 100%, 0 0, 20.8% 41.58, 20.8% 0, 50% 100%, 79.2% 0, 79.2% 41.58%, 100% 0, 100% 100%);
+  //   }
+  // });
+
 
   &--hight {
     min-height: 156px;

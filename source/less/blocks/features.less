@@ -1,5 +1,6 @@
 .features__list {
   .clear-list;
+
   background-color: @gray;
 
   .tablet({
@@ -14,10 +15,11 @@
 
 .features__advantages-list {
   .clear-list;
+
   background-color: @white;
 
   .mobile({
-    padding-left: 65px;
+    padding-left: 50px;
   });
 
   .tablet({
@@ -35,19 +37,11 @@
 .features__item {
   position: relative;
 
-
-  .tablet({
-    grid-template-columns: 1fr 2fr;
-  });
-
-  .desktop({
-    grid-template-columns: 1fr 2fr;
-  });
-
   &--city {
     .tablet({
       display: grid;
       grid-column: 1 / 4;
+      grid-template-columns: 1fr 2fr;
     });
   }
 
@@ -65,8 +59,26 @@
     text-align: start;
 
     .tablet({
-      padding-top: 158px;
+      padding: 156px 44px 62px;
       text-align: center;
+    });
+
+    .desktop({
+      padding: 169px 57px 55px;
+    });
+  }
+
+  &--colored {
+
+    .tablet({
+      padding: 42px 28px 44px;
+      min-height: 256px;
+      display: grid;
+      place-content: center;
+    });
+
+    .desktop({
+      padding: 53px;
     });
   }
 
@@ -100,10 +112,20 @@
 
 .features__text-block {
   display: grid;
+  place-content: center;
+
+  .tablet({
+    padding: 52px 33px 31px;
+  });
 
   &--accent {
     background-color: @blue-400;
     color: @white;
+    min-height: 211px;
+
+    .desktop({
+      padding: 52px 55px;
+    });
   }
 }
 
@@ -113,7 +135,6 @@
   object-fit: cover;
 
   .tablet({
-    height: 256px;
     background-size: contain;
   });
 

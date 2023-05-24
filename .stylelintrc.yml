@@ -64,4 +64,3 @@ rules:
   value-keyword-case: [lower, { camelCaseSvgKeywords : true }]
   less/color-no-invalid-hex: null
   no-extra-semicolons: null
-

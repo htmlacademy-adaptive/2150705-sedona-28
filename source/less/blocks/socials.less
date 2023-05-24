@@ -9,13 +9,36 @@
 .socials__item {
   box-sizing: border-box;
   background-color: @blue-400;
-  width: 48px;
-  height: 48px;
-  padding: 17px 12px;
   margin-bottom: 37px;
   cursor: pointer;
 
   .tablet({
     margin-bottom: 0;
   });
+}
+
+.socials__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+
+  &:hover {
+    background-color: #669ec0;
+  }
+
+  &:active {
+    background-color: #5496bd;
+    opacity: 0.3;
+  }
+
+  &:disabled {
+    background-color: #e5e5e5;
+  }
+}
+
+.socials-path {
+  fill: #ffffff;
 }
