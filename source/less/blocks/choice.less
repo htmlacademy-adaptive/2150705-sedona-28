@@ -51,3 +51,19 @@
   top: 12px;
   left: 12px;
 }
+
+.choice:hover .choice__mark {
+  background-color: #e5e5e5;
+}
+
+.choice:active .choice__mark {
+  background-color: #d5d5d5;
+}
+
+.choice:active .choice__mark::before {
+  background-color: hsl(0deg 0% 20% / 30%);
+}
+
+.choice__input:focus ~ .choice__mark {
+  outline: 1px solid @gray-100;
+}
