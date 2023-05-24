@@ -3,9 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/style.css">
     <title>HTML Academy: Седона</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/favicon-apple-180x180.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preload" href="/fonts/ptsans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/ptsansbold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="img/hero-mobile@2x.jpg" as="image">
   </head>
   <body class="page__body">
     <header class="main-header">
@@ -35,7 +41,10 @@
 
     <main class="main-container">
       <div class="main-hero main-hero--hight">
-        <img class="main-hero__image" src="img/stack.svg#sedona-title" width="229" height="39" alt="Надпись - Седона">
+        <picture>
+          <source media="(min-width: 768px)" srcset="img/sedona-tablet.svg" width="458" height="78">
+          <img class="main-hero__image" src="img/sedona-mobile.svg" width="229" height="39" alt="Надпись - Седона">
+        </picture>
       </div>
       <section class="feedback form-container">
         <div class="feedback__description description">
@@ -43,56 +52,56 @@
           <p class="description__text description__text--feedback">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
         </div>
         <form class="feedback__form form" action="https://echo.htmlacademy.ru/" method="post">
-         <div class="form__wrapper">
-           <fieldset class="feedback__group feedback__group--name">
-             <legend class="feedback__title feedback__title--legend">Представьтесь:</legend>
-             <label class="feedback__label input-text">Имя*:<br>
-               <input class="input-text__text" type="text" placeholder="Пётр" name="first-name" id="first-name" required>
-             </label>
-             <label class="feedback__label input-text">Фамилия*:<br>
-               <input class="input-text__text" type="text" placeholder="Пустота" name="last-name" id="last-name" required>
-             </label>
-             <label class="feedback__label input-text">Отчество:<br>
-               <input class="input-text__text" type="text" placeholder="Викторович" name="patronymic" id="patronymic">
-             </label>
-           </fieldset>
-           <fieldset class="feedback__group feedback__group--contacts">
-             <legend class="feedback__title feedback__title--legend">Контактная информация:</legend>
-             <label class="feedback__label input-text input-text--tel">Контактный телефон*:<br>
-              <div class="input-wrapper">
-                <input class="input-text__text" type="tel" name="tel" id="tel" placeholder="Введите телефон" required>
+        <div class="form__wrapper">
+          <fieldset class="feedback__group feedback__group--name">
+            <legend class="feedback__title feedback__title--legend">Представьтесь:</legend>
+            <label class="feedback__label input-text">Имя*:<br>
+            </label>
+            <input class="feedback__text" type="text" placeholder="Пётр" name="first-name" id="first-name" required>
+            <label class="feedback__label input-text">Фамилия*:<br>
+            </label>
+            <input class="feedback__text" type="text" placeholder="Пустота" name="last-name" id="last-name" required>
+            <label class="feedback__label input-text">Отчество:<br>
+            </label>
+            <input class="feedback__text" type="text" placeholder="Викторович" name="patronymic" id="patronymic">
+          </fieldset>
+          <fieldset class="feedback__group feedback__group--contacts">
+            <legend class="feedback__title feedback__title--legend">Контактная информация:</legend>
+            <label class="feedback__label input-text input-text--tel" for="tel">Контактный телефон*:<br>
+            </label>
+              <div class="feedback__wrapper input-text">
+                <input class="feedback__text input-text__text input-text__text--tel" type="tel" name="tel" id="tel" placeholder="Введите телефон" required>
                 <span class="input-text__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="18" height="18" fill="none" viewBox="0 0 18 18">
-                    <path fill="#010101" d="M3.6 7.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V17c0 .6-.4 1-1 1C7.6 18 0 10.4 0 1c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1L3.6 7.8Z"/>
-                  </svg>
-                </span>
-               </label>
-              </div>
-             <label class="feedback__label input-text input-text--mail">Электронная почта*:<br>
-              <div class="input-wrapper">
-                <input class="input-text__text" type="mail" name="mail" id="mail" placeholder="Введите e-mail" required>
-                <span class="input-text__icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="16" height="12" fill="none" viewBox="0 0 16 12">
-                    <path fill="#000" d="M8 8c-.3 0-.5-.1-1-.3L0 4v7c0 .5.5 1 1 1h14c.5 0 1-.5 1-1V4L9 7.7c-.5.2-.7.3-1 .3Zm7-8H1C.5 0 0 .5 0 1v.8L8 6l8-4.2V1c0-.5-.5-1-1-1Z"/>
+                  <svg class="message-fill" width="18" height="18">
+                    <use href="img/stack.svg#phone"></use>
                   </svg>
                 </span>
               </div>
-             </label>
-           </fieldset>
-         </div>
+            <label class="feedback__label input-text input-text--mail" for="email">Электронная почта*:<br>
+            </label>
+              <div class="feedback__wrapper input-text">
+                <input class="feedback__text input-text__text input-text__text--mail" type="email" name="email" id="email" placeholder="Введите e-mail" required>
+                <span class="input-text__icon">
+                  <svg class="message-fill" width="16" height="12">
+                    <use href="img/stack.svg#message"></use>
+                  </svg>
+                </span>
+              </div>
+          </fieldset>
+        </div>
           <fieldset class="feedback__group feedback__group--impression">
             <legend class="feedback__title feedback__title--legend feedback__title--impression">Ваше Общее впечатление:</legend>
-            <label class="feedback__label choice ">
+            <label class="choice ">
               <input class="choice__input visually-hidden" type="radio" name="radio-group" id="positive" value="positive" checked>
               Скорее положительное
               <span class="choice__mark"></span>
             </label>
-            <label class="feedback__label choice">
+            <label class="choice">
               <input class="choice__input visually-hidden" type="radio" name="radio-group" id="negative" value="negative">
               Скорее отрицательное
               <span class="choice__mark"></span>
             </label>
-            <label class="feedback__label choice">
+            <label class="choice">
               <input class="choice__input visually-hidden" type="radio" name="radio-group" id="neutral" value="neutral">
               Затрудняюсь ответить
               <span class="choice__mark"></span>
@@ -100,19 +109,19 @@
           </fieldset>
           <fieldset class="feedback__group feedback__group--attractions">
             <legend class="feedback__title feedback__title--legend feedback__title--attractions">Посещенные достопримечательности:</legend>
-            <label class="feedback__label choice">
+            <label class=" choice">
               <input class="choice__input visually-hidden" type="checkbox" name="devils-bridge" id="devils-bridge" checked>Мост Дьявола
               <span class="choice__mark"></span>
             </label>
-            <label class="feedback__label choice">
+            <label class="choice">
               <input class="choice__input visually-hidden" type="checkbox" name="bell" id="mountain-bell" checked>Гора-Колокол
               <span class="choice__mark"></span>
             </label>
-            <label class="feedback__label choice">
+            <label class="choice">
               <input class="choice__input visually-hidden" type="checkbox" name="slide-park" id="slide-park" checked>Слайд-парк
               <span class="choice__mark"></span>
             </label>
-            <label class="feedback__label choice">
+            <label class="choice">
               <input class="choice__input visually-hidden" type="checkbox" name="red-rocks" id="red-rocks">Красные скалы
               <span class="choice__mark"></span>
             </label>
@@ -130,36 +139,56 @@
     </main>
     <footer class="main-footer">
       <h2 class="visually-hidden">Социальные сети</h2>
-      <span class="main-footer__hashtag">#visitsedona</span>
+      <span class="main-footer__hashtag link">#visitsedona</span>
       <ul class="socials">
         <li class="socials__item">
-          <a class="socials__icon" href="https://vk.com/htmlacademy">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="24" height="14" fill="none" viewBox="0 0 24 14">
-              <path fill="#fff" fill-rule="evenodd" d="M23.45.95c.17-.55 0-.95-.8-.95h-2.62c-.67 0-.98.35-1.14.73 0 0-1.34 3.2-3.23 5.27-.61.6-.89.8-1.22.8-.17 0-.42-.2-.42-.74V.95c0-.66-.18-.95-.74-.95H9.15c-.42 0-.67.3-.67.6 0 .61.95.76 1.05 2.5v3.8c0 .84-.16.99-.5.99-.88 0-3.05-3.21-4.33-6.89-.25-.71-.5-1-1.17-1H.9C.15 0 0 .35 0 .73c0 .68.89 4.07 4.14 8.55C6.32 12.34 9.38 14 12.15 14c1.67 0 1.88-.37 1.88-1v-2.32c0-.73.16-.88.69-.88.38 0 1.05.2 2.61 1.67C19.11 13.22 19.4 14 20.41 14h2.62c.75 0 1.13-.37.91-1.1-.24-.72-1.09-1.77-2.21-3.02-.62-.7-1.54-1.47-1.81-1.86-.4-.49-.28-.7 0-1.14 0 0 3.2-4.43 3.53-5.93Z" clip-rule="evenodd"/>
+          <a class="socials__link socials__link--vk link" href="https://vk.com/htmlacademy">
+            <svg class="socials-path" width="24" height="24">
+              <use href="img/stack.svg#vk"></use>
             </svg>
           </a>
         </li>
         <li class="socials__item">
-          <a class="socials__icon" href="https://t.me/htmlacademy">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="22" height="18" fill="none" viewBox="0 0 22 18">
-              <path fill="#fff" d="m21.44 1.62-3.17 14.95c-.24 1.05-.86 1.31-1.75.82l-4.83-3.56-2.33 2.24c-.25.26-.47.47-.97.47l.35-4.91 8.95-8.09c.39-.35-.09-.54-.6-.2L6.01 10.32 1.26 8.82C.22 8.5.21 7.8 1.48 7.3L20.1.11c.87-.32 1.62.2 1.34 1.51Z"/>
+          <a class="socials__link socials__link--telegram link" href="https://t.me/htmlacademy">
+            <svg class="socials-path" width="22" height="18">
+              <use href="img/stack.svg#telegram"></use>
             </svg>
           </a>
         </li>
         <li class="socials__item">
-          <a class="socials__icon" href="https://www.youtube.com/user/htmlacademyru">
-            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="20" height="14" fill="none" viewBox="0 0 20 14">
-              <path fill="#fff" d="M17.18 0H2.81C1.31 0 0 1.3 0 2.8v8.3C0 12.7 1.3 14 2.81 14h14.37A2.8 2.8 0 0 0 20 11.2V2.8c.1-1.5-1.2-2.8-2.8-2.8ZM7.03 10.4V3.6L13.87 7l-6.84 3.4Z"/>
+          <a class="socials__link socials__link--youtube link" href="https://www.youtube.com/user/htmlacademyru">
+            <svg class="socials-path" width="22" height="18">
+              <use href="img/stack.svg#youtube"></use>
             </svg>
           </a>
         </li>
       </ul>
-      <a class="author" href="https://htmlacademy.ru/">
-          <span class="author__developed">Разработано</span>
-          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="27" height="35" fill="none" viewBox="0 0 27 35">
-            <path fill="#000" d="M13.6 0h-.1L0 1.4v24.7l13.5 8 13.4-8V1.4L13.6 0ZM25 12.1 13.5 5.3v-.1h-.1l-.1-.1v.1L1.9 12.1v-9l11.5-1.2L25 3.1v9ZM13.4 6.8l11.5 6.7-4.5 2.6-7.1-4.2v1.4l5.9 3.5-.9.5-5-3v1.4l3.8 2.3-.8.5-3-1.8v1.4l1.9 1.1-1.8 1.1L2 13.6l11.4-6.8ZM1.9 15.1l11.4 6.8v1l-7.9-4.7v1.4l8 4.8v1.1l-8-4.7v1.4l8 4.8 8.1-4.9v-5.2l3.4-2v10l-11.5 6.9L1.9 25v-9.9Z"/>
-          </svg>
-        </a>
+      <a class="author link" href="https://htmlacademy.ru/">
+        <span class="author__developed">Разработано</span>
+        <svg class="author__icon"  width="27" height="35">
+          <use href="img/stack.svg#htmlacademy"></use>
+        </svg>
+      </a>
     </footer>
+    <div class="modal-container modal-container-close-error">
+      <div class="modal-error modal-search">
+        <section class="modal-content-close description">
+          <h2 class="modal-title-error modal-title-error--br description__title">Что-то пошло <br> не так!</h2>
+          <p class="modal-text-error description__text">Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
+          <button class="modal-button-error button" type="submit">ок</button>
+        </section>
+      </div>
+    </div>
+    <div class="modal-container modal-container-close-feedback">
+      <div class="modal-feedback modal-search">
+        <section class="modal-content-feedback description">
+          <h2 class="modal-title-feedback description__title">Ваш отзыв отправлен!</h2>
+          <p class="modal-text-feedback modal-text-feedback--br description__text">Спасибо за ваше участие, ваш отзыв уже поступил к нам. <br> В ближайшее время мы опубликуем его на сайте.</p>
+          <div class="feedback-button">
+            <button class="modal-button-feedback button" type="submit">Закрыть окно</button>
+          </div>
+        </section>
+      </div>
+    </div>
   </body>
 </html>

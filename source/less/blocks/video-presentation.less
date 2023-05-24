@@ -5,11 +5,12 @@
 }
 
 .video-presentation__description {
-  padding: 0 8px;
+  padding-top: 58px;
+  padding-bottom: 66px;
   margin-bottom: 38px;
 
   .tablet({
-    max-width: 500px;
+    max-width: 490px;
     margin: 0 auto;
   });
 }
@@ -21,4 +22,29 @@
 
 .video-presentation__image {
   width: 100%;
+}
+
+.video-presentation__play{
+  width: 48px;
+  height: 54px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  margin-right: -50%;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
